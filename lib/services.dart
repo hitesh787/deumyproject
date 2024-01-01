@@ -9,7 +9,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 Future<void> initializeService() async {
   final service = FlutterBackgroundService();
 
-  AndroidNotificationChannel channel = AndroidNotificationChannel(
+  AndroidNotificationChannel channel = const AndroidNotificationChannel(
     "step",
     "step service",
     importance: Importance.high,
@@ -77,7 +77,7 @@ void onStart(ServiceInstance service) async {
             888,
             "Step Counter",
             "Today Step $todaySteps",
-            NotificationDetails(
+            const NotificationDetails(
                 android: AndroidNotificationDetails(
               "step",
               "step service",
